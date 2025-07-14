@@ -76,15 +76,5 @@ function insertObject($nom,$image ,$categorie,$id){
     $request = mysqli_query(db_connect(), $sql);
        
 }
-function getObjectById($id) {
-    global $db;
-    $sql = "SELECT o.*, c.nom_categorie FROM final_objets o
-            JOIN final_categorie c ON o.id_categorie = c.id_categorie
-            WHERE o.id_objet = ?";
-    $stmt = $db->prepare($sql);
-    $stmt->execute([$id]);
-    return $stmt->fetch(PDO::FETCH_ASSOC);
-}
-
-
+header("Location:../model.php?p=home.php")
 ?>

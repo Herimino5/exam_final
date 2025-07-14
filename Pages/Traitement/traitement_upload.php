@@ -41,7 +41,6 @@ echo "Échec du déplacement du fichier.";
 } else {
 echo "Aucun fichier reçu.";
 }
-header("Location:../model.php?p=home.php");
 ?>
 
 

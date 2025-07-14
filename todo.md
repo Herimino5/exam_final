@@ -45,3 +45,24 @@ to do :
 
 #version 2:
  -Design ,amelioration [ok] [Herimino]
+ -upload [ok] Hasimanjaka + Design
+
+#Alea 1 [en cours] [Herimino]
+ 
+
+   1-creation du boutton emprunter [ok]
+ 
+
+   2-creation du page emprunter.php :
+   
+   <?php $emprunt = isEmprunted($row['id_objet']); ?>
+<?php if ($emprunt && isset($emprunt['date_retour'])): ?>
+    <div class="alert alert-warning p-2 mb-3">
+        Indisponible jusqu'au <strong><?= date('d/m/Y', strtotime($emprunt['date_retour'])) ?></strong>
+    </div>
+<?php else: ?>
+    <div class="alert alert-success p-2 mb-3">Disponible</div>
+<?php endif; ?>
+
+
+
