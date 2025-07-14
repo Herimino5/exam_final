@@ -1,10 +1,11 @@
 <?php 
+include('../../inc/functions.php');
 if (isset($_POST['email']) && isset($_POST['pwd'])) {
     $email = $_POST['email'];
     $pwd = $_POST['pwd'];
    $valiny=login($email,$pwd);
    if ($valiny==null) {
-       header("Location: model.php?p=login.php&error=1");
+       header("Location: ../model.php?p=login.php&error=1");
        exit();
    } else {
     
@@ -13,8 +14,8 @@ if (isset($_POST['email']) && isset($_POST['pwd'])) {
        session_start();
 
        $_SESSION['username']=$valiny['nom'];
-       $_SESSION['id']=$valiny[0]['id_membre'];
-        header("Location: model.php?p=home.php");
+       $_SESSION['id']=$valiny['id_membre'];
+        header("Location: ../model.php?p=home.php");
     }
 
 } else {

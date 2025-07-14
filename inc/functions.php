@@ -8,7 +8,7 @@ function create_account($nom, $date_naissance, $genre, $email, $ville, $mdp){
 }
  function login($email,$pwd){
     $result=null;
-    $sql="select Nom,ID_membres from Membres where Email= '%s' and Password='%s'";
+    $sql="select nom,id_membre from membre where email= '%s' and mdp='%s'";
     $sql=sprintf($sql,$email,$pwd);
     $request=mysqli_query(db_connect(),$sql);
     if ($user=mysqli_fetch_assoc($request)) {
@@ -21,8 +21,8 @@ function create_account($nom, $date_naissance, $genre, $email, $ville, $mdp){
     
  }
 
-function getAllDepartements(){
-    $sql="Select * from departments ";
+function getAllObject(){
+    $sql="Select * from v_object_details ";
     $result = mysqli_query(db_connect(), $sql);
     
     $posts = [];
