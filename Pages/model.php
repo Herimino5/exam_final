@@ -29,6 +29,17 @@ require("../inc/functions.php")
                         <i class="fas fa-filter me-2"></i> Filtre
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white px-3 py-2 <?= ($_GET['p'] ?? '') === 'upload.php' ? 'bg-primary rounded' : '' ?>" href="model.php?p=upload.php">
+                        <i class="fas fa-filter me-2"></i> Upload
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white px-3 py-2 <?= ($_GET['p'] ?? '') === 'membre.php' ? 'bg-primary rounded' : '' ?>" href="model.php?p=membre.php">
+                        <i class="fas fa-filter me-2"></i> Membre
+                    </a>
+                    
+                </li>
             </ul>
         </aside>
 

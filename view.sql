@@ -24,6 +24,7 @@ SELECT
     od.nom_categorie AS nom_categorie,
     od.proprietaire AS proprietaire,
     od.nom_image AS nom_image,
+    e.id_membre AS id_emprunteur,
     e.date_emprunt AS date_emprunt,
     e.date_retour AS date_retour
 FROM 

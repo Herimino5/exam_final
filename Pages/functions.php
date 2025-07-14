@@ -76,5 +76,24 @@ function insertObject($nom,$image ,$categorie,$id){
     $request = mysqli_query(db_connect(), $sql);
        
 }
-header("Location:../model.php?p=home.php")
+function getAllEmprunt($id){
+    $sql="Select * from final_v_object_emprunted where id_emprunteur='%d'";
+    $sql=sprintf($sql,$id);
+    $result = mysqli_query(db_connect(), $sql);
+    $posts = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $posts[] = $row;
+    }
+    return $posts;
+}
+function getInformations($id){
+    $sql="Select * from final_membre where id_membre='%s'";
+    $sql=sprintf($sql,$id);
+    $request=mysqli_query(db_connect(),$sql);
+    if ($user=mysqli_fetch_assoc($request)) {
+        $result=$user;
+    }
+    return $result;
+}
+
 ?>
