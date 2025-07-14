@@ -6,7 +6,7 @@ function db_connect()
     static $connect = null;
 
     if ($connect === null) {
-        $connect =mysqli_connect("localhost","root","","exam_finale");
+        $connect =mysqli_connect("localhost","ETU004362","MfNBvwu","db_s2_ETU004362");
 
         if (!$connect) {
             // Arrête le script et affiche une erreur si la connexion échoue

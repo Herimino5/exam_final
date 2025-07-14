@@ -12,12 +12,14 @@
                 <img src="../assets/image/<?= $row['nom_image'] ?>" class="card-img-top rounded-top" alt="Property Image">
                 <div class="card-body">
                     <h5 class="card-title text-primary fw-bold"><?= $row['nom_objet'] ?></h5>
+                    <?php $emprunt = isEmprunted($row['id_objet']); ?>
+                    <?php if ($emprunt && isset($emprunt['date_retour'])) { ?>
+                    <p class="card-text text-danger">Emprunté jusqu'au <?= date('d/m/Y', strtotime(isEmprunted($row['id_objet'])['date_retour'])) ?></p>
+                    <?php } ?>
                     <p class="card-text text-muted"><?= $row['nom_categorie'] ?></p>
                     <p class="card-text"><small class="text-secondary">Owner: <?= $row['proprietaire'] ?></small></p>
                 </div>
-                <div class="card-footer bg-white border-0 text-end">
-                    <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
-                </div>
+               
             </div>
         </div>
         <?php } ?>

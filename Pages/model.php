@@ -23,14 +23,12 @@ require("../inc/functions.php")
       </div>
    <ul class="nav flex-column">
   <li class="nav-item">
-  <a class="nav-link active text-white" aria-current="page" href="modele.php?p=liste_dept.php">Accueil</a>
+  <a class="nav-link active text-white" aria-current="page" href="model.php?p=home.php">Accueil</a>
   </li>
   <li class="nav-item">
-  <a class="nav-link text-white" href="modele.php?p=recherche.php">Recherche</a>
+  <a class="nav-link text-white" href="model.php?p=filtre.php">Filtre</a>
   </li>
-  <li class="nav-item">
-  <a class="nav-link text-white" href="modele.php?p=stats.php">Statistiques</a>
-  </li>
+ 
  
 </ul>
       </div>
