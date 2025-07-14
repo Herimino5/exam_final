@@ -1,0 +1,15 @@
+body{
+    background-color: #E5E5E5;
+    font-family: Arial, sans-serif;
+}
+.fond-jaune {
+    background-color: #FCA311;
+    padding: 20px;
+    border-radius: 10px;
+}
+.fond-dark {
+    background-color: #14213D;
+    color: white;
+    border-radius: 10px;
+    
+}

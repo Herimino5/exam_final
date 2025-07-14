@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-   <?php header("location:Pages/model.php?p=login.php") ?>
+   <?php header("location:Pages/model.php?p=inscript.php") ?>
 </body>
 </html>

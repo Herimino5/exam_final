@@ -1,5 +1,25 @@
 <?php
 require("connection.php");
+function create_account($nom, $date_naissance, $genre, $email, $ville, $mdp){
+    $sql = "INSERT INTO membre (nom, date_naissance, genre, email, ville, mdp) VALUES ('%s', '%s', '%s', '%s', '%s', '%s')";
+    $sql = sprintf($sql, $nom, $date_naissance, $genre, $email, $ville, $mdp);
+    echo $sql;
+    $request = mysqli_query(db_connect(), $sql);
+}
+ function login($email,$pwd){
+    $result=null;
+    $sql="select Nom,ID_membres from Membres where Email= '%s' and Password='%s'";
+    $sql=sprintf($sql,$email,$pwd);
+    $request=mysqli_query(db_connect(),$sql);
+    if ($user=mysqli_fetch_assoc($request)) {
+       $result=$user;
+       
+     }
+     
+     
+     return $result;
+    
+ }
 
 function getAllDepartements(){
     $sql="Select * from departments ";
@@ -30,104 +50,8 @@ function getInformation($id){
 
     return $posts;
 }
-function Check_current($date){
-    $retour;
-    $tableau=explode("-",$date);
-    $date=(int)$tableau[0];
-    if ($date==9999) {
-         $retour="Current";
-    }else{
-        $retour=$date;
-    }
-    return $retour;
-}
-function getEmployee($id_dep){
-    $sql="Select * from v_current_dep_emp where dept_no='%s' limit 20 ";
-    $sql=sprintf($sql,$id_dep);
-    $result = mysqli_query(db_connect(), $sql);
-    
-    $posts = [];
-   
-    while ($row = mysqli_fetch_assoc($result)) {
-        $posts[] = $row;
-    }
 
-    return $posts;
-}
-function getOneEmployee($id_emp){
-    $sql="Select * from v_current_dep_emp where emp_no='%s' ";
-    $sql=sprintf($sql,$id_emp);
-   
-    
-    $result = mysqli_query(db_connect(), $sql);
-    
-    $posts;
-   
-    if($row = mysqli_fetch_assoc($result)) {
-        $posts = $row;
-    }
-
-    return $posts;
-} 
-function getName($id_emp){
-    $sql="Select first_name,last_name from employees where emp_no='%s' ";
-    $sql=sprintf($sql,$id_emp);
-   
-    
-    $result = mysqli_query(db_connect(), $sql);
-    
-    $posts;
-   
-    if($row = mysqli_fetch_assoc($result)) {
-        $posts = $row;
-    }
-
-    return $posts;
-} 
-function getDepName($id_dep){
-    $sql="Select dept_name from departments where dept_no='%s' ";
-    $sql=sprintf($sql,$id_dep);
-   
-    
-    $result = mysqli_query(db_connect(), $sql);
-    
-    $posts;
-   
-    if($row = mysqli_fetch_assoc($result)) {
-        $posts = $row;
-    }
-
-    return $posts;
-}
-
-function getSalaire($id_emp){
-    $sql="Select * from salaries where emp_no='%s' order by to_date DESC ";
-    $sql=sprintf($sql,$id_emp);
-   
-    $result = mysqli_query(db_connect(), $sql);
-    
-    $posts = [];
-   
-    while ($row = mysqli_fetch_assoc($result)) {
-        $posts[] = $row;
-    }
-
-    return $posts;
-} 
-function getTitle($id_emp){
-    $sql="Select * from titles where emp_no='%s'  order by to_date DESC";
-    $sql=sprintf($sql,$id_emp);
-    
-    $result = mysqli_query(db_connect(), $sql);
-    
-    $posts = [];
-   
-    while ($row = mysqli_fetch_assoc($result)) {
-        $posts[] = $row;
-    }
-
-    return $posts;
-} 
+ 
 
 
 
