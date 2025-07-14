@@ -1,7 +1,7 @@
 #Projet Final :
 #version 1 :
 to do :
-* Creation repository exam_finale sur github[ok]
+* Creation repository exam_finale sur github[ok] [Herimino]
   gitclone[ok]
 -Creation base :[ok]
   -Membre 
@@ -15,7 +15,7 @@ to do :
   -10 object per membre
   -10 emprunt
  * Creation page :
-  Initialisation :[ok]
+  Initialisation :[ok] [Hasimanjaka]
     -Inc :[ok]
       -connection.php
       -fonctio.php
@@ -30,7 +30,7 @@ to do :
     -Pages
       -model.php[ok]
       -login et inscription
-            -inscript:traitement/trait_inscript.php(appel createAccount())[ok]
+            -inscript:traitement/trait_inscript.php(appel createAccount())[ok] [Herimino]
             -
 
             -login:traitement/trait_login.php[ok]
@@ -40,5 +40,8 @@ to do :
                     -view2 v_objetct_emprunted: view1 + emprunt
                     -view3 v_emprunt_membre: mebre join emprunt
                     -view4 v_empt_generale: view2 + view3
-         -Appel fonction getAllObject()[ok]
-      -Filtre par categorie
+         -Appel fonction getAllObject()[ok] [Hasimanjaka]
+      -Filtre par categorie[ok]
+
+#version 2:
+ -Design ,amelioration [ok] [Herimino]

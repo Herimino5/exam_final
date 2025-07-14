@@ -65,4 +65,16 @@ function format_montant($text){
     $result="$".number_format($text,2,".",",");
     return $result;
 }
+function insertObject($nom,$image ,$categorie,$id){
+       $sql="insert into final_objet (nom_objet,id_membre,id_categorie) values ('%s','%s','%s')";
+       $sql = sprintf($sql, $nom, $categorie,$id);
+    
+    $request = mysqli_query(db_connect(), $sql);
+    $last=db_connect()->insert_id;
+        $sql="insert into final_images_objet (nom_image,id_objet) values ('%s','%s')";
+       $sql = sprintf($sql, $image,$last);
+    $request = mysqli_query(db_connect(), $sql);
+       
+}
+header("Location:../model.php?p=home.php")
 ?>
